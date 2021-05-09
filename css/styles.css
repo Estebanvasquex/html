@@ -1,0 +1,8 @@
+/* importar fuentes de google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap');
+
+
+body{
+    /* uso de la fuente raleway google fonts */
+    font-family: 'Raleway', sans-serif;   
+}
