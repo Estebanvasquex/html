@@ -2,7 +2,248 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap');
 
 
+/* Declaración de variables */
+/**/
+
+:root{
+    --background: linear-gradient(135deg, #667eea7e 0% #764ba298 100%); /*Variable para background con gradientet de 135 grados los dos últimos digitos del color agregan transparencia el stop del pirmer color está en el el 0% y el segundo color su stop es al 100%*/
+    --color-primary: #667eea;
+    --color-secondary: #764ba2;
+    --boton-padding: 20px 40px;
+
+}
+
 body{
     /* uso de la fuente raleway google fonts */
     font-family: 'Raleway', sans-serif;   
 }
+
+/*todo lo que tenga la clase container*/
+
+.container{
+    width: 90%;
+    margin: 0 auto;
+    /* background: rgba(255, 0, 149, 0.336); */
+    overflow: hidden; /*Esconde todos los elementos que salen del container lo puedes probar quitandolo para observar lo que hace*/
+    padding: 80px 0; /*80 pixeles arriba y abajo y 0 a los lados*/
+    max-width: 1200px; /*Máximo ancho de un elemento*/
+
+}
+
+.subtitle{
+    color: var(--color-primary); /*El color será dirigido por la variable, depende del cambio de variable dará el color*/
+    font-size: 2.5rem; /*Especifica la dimensión de la letra*/
+    margin-bottom: 35px; /*Margen de distancia*/
+}
+
+.hero{
+    height: 100vh; /*Que ocupe el 100% del alto del veiw port*/
+    background-image:  /*var(--background),*/ url('../assets/Principal.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; /*abarca el 100% del contenedor */
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+
+}
+
+.hero .container{
+    padding: 0;  /*Espacio de relleno requerido en todos los lados, cero padin para los elementos container dentro de hero*/
+
+}
+
+.nav{
+    display: flex;
+    justify-content: flex-end; /*para que todos los elementos se vayan al final del contenedor*/
+    height: 70xp;
+    align-items: center;
+    font-weight: 700;
+    
+}
+
+.nav--footer{
+    font-weight: 300;
+    justify-content: flex-start;
+
+}
+
+
+.nav__items{
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+    padding: 10px 15px;
+    font-weight: inherit;
+    
+}
+
+.nav__items--cta{
+    border: 1px solid #fff;
+
+}
+
+.nav__items--footer{
+    padding: 10px;
+    
+}
+
+/* código seccion de hero */
+
+.hero__container{
+    display: flex;
+    height: calc(100vh - 70px);
+    align-items: center;
+    color: #fff;
+
+}
+
+.hero__texts{
+    width: 80%;
+    margin-bottom: 50px;
+
+}
+
+.hero__title{
+    font-size: 3.2rem;
+    /*color: rgb(157, 255, 28);*/
+}
+
+.hero__subtitle{
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin: 15px 0;
+
+}
+
+
+.hero__cta{
+    display: inline-block;/*para desbloquear propiedades del box model*/
+    background: #fff;
+    padding: var(--boton-padding);
+    color: var(--color-primary);
+    text-decoration: none;
+    border-radius: 40px;
+
+}
+
+.hero__wave{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    
+}
+
+/* código seccion about */
+
+.presentation{
+    padding-top: 0;
+    text-align: center;
+}
+
+.presentation__picture{
+    width: 250px; /* tamaño ancho */
+    height: 250px;/* tamaño alto */
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.presentation__copy{
+    width: 80%;
+    margin: 0 auto;
+
+}
+
+.presentation__cta{
+    display: inline-block;
+    margin-top: 30px;
+    background: var(--color-primary);
+    color: #fff;
+    text-decoration: none; /* le quita la raya de abaja al hipervinculo*/
+    padding: var(--boton-padding);
+    border-radius: 40px;
+
+}
+
+
+
+.about{
+    min-height: 400px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 80px;
+    justify-items: center; /*centrar todo vertical y horizontalmente*/
+    align-items: center;/*centrar todo vertical y horizontalmente*/
+
+}
+
+.about__img{
+    text-align: center;
+
+}
+
+.about__img--left{
+    text-align: left;
+}
+
+.about__picture{
+    max-width: 80%;
+}
+
+.about__paragraph{
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+/*Projects*/
+
+.projects{
+    background: #f2f2f2;
+}
+
+.projects__grid{
+    display: grid;
+    height: 550px;
+    grid-template-areas: 
+    "img1 img1 img2 img3"
+    "img1 img1 img4 img5";
+    gap: 10px;
+}
+.projects__item{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.projects__img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.projects__item:nth-of-type(1){
+    grid-area: img1;
+
+}
+
+.projects__item:nth-of-type(2){
+    grid-area: img2;
+    
+}
+
+.projects__item:nth-of-type(4){
+    grid-area: img4;
+    
+}
+
+.projects__item:nth-of-type(5){
+    grid-area: img5;
+    
+}
+
